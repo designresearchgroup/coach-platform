@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://designresearchgroup.github.io/coach-platform/sitemap.xml

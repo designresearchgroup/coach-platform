@@ -1,0 +1,36 @@
+/* =====================================================================
+   BRAND  —  edit THIS one file to make the platform yours.
+
+   Change your colour and your fonts here; every page re-tints and re-sets
+   automatically. You should not need to touch anything else to re-brand.
+
+   If you change the fonts below, also update the Google Fonts <link> in
+   index.html <head> so the new fonts actually load.
+
+   This layer sits on top of the structural scaffold and overrides its
+   defaults — the scaffold stays untouched, so the system stays swappable.
+   ===================================================================== */
+:root{
+  /* --- Your fonts --- */
+  --font:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;   /* body + UI */
+  --display:'Montserrat','Poppins',sans-serif;                               /* big headlines */
+
+  /* --- Your brand colour ---
+     Pick ONE accent; the whole site re-tints from it. */
+  --accent:#7A5195;            /* <-- CHANGE THIS to your brand colour */
+  --accent-hover:#633F7A;      /* a slightly darker shade, for hover */
+  --accent-lt:rgba(122,81,149,.15);
+  --accent-dim:rgba(122,81,149,.08);
+  --accent-text:#fff;          /* text colour on top of the accent */
+  --bd-focus:rgba(122,81,149,.6);
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){--bd-focus:rgba(122,81,149,.5);}
+}
+:root[data-theme="light"]{--bd-focus:rgba(122,81,149,.5);}
+
+/* Section accents — keep these in your own colour family (no need to change
+   unless you want each section a slightly different shade). */
+[data-tint="a"]{--tint:#7A5195;--tint-dim:rgba(122,81,149,.07);}
+[data-tint="b"]{--tint:#9A4A7C;--tint-dim:rgba(154,74,124,.08);}
+[data-tint="c"]{--tint:#4C3A6E;--tint-dim:rgba(76,58,110,.08);}
