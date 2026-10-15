@@ -29,6 +29,7 @@ jobs:
         run: |
           test -f index.html || { echo "::error::sales page index.html missing"; exit 1; }
           test -f img/og.png || { echo "::error::img/og.png missing — link previews would 404"; exit 1; }
+          test -f success.html || { echo "::error::success.html missing — the trial/payment confirmation page"; exit 1; }
           test -f template/index.html || { echo "::error::template/index.html missing — the product a buyer gets"; exit 1; }
           test -f template/brand.css  || { echo "::error::template/brand.css missing — the re-brand layer"; exit 1; }
           grep -q 'og:image' index.html || { echo "::error::no og:image on the sales page"; exit 1; }
