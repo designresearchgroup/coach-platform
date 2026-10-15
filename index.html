@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Avery Rivers — Leadership &amp; Life Coaching</title>
-<meta name="description" content="A demo of The Bold Life Platform: an off-the-shelf coaching website you buy once, customize, and own — no monthly subscription. This page shows a sample coaching practice built on the platform.">
-<meta name="author" content="The Bold Life Platform">
-<meta property="og:title" content="Avery Rivers — Leadership &amp; Life Coaching">
-<meta property="og:description" content="A sample coaching practice built on The Bold Life Platform — the off-the-shelf coaching website you buy once, customize, and own.">
+<title>The Bold Life Platform — Own Your Coaching Website. Buy Once.</title>
+<meta name="description" content="Kajabi, simplified. A white-label coaching website we build for you — your brand, your domain, yours to own — for a one-time $500 lifetime license instead of $150/month forever. See the live case study: The Bold Life.">
+<meta name="author" content="The Bold Life">
+<meta property="og:title" content="The Bold Life Platform — Own Your Coaching Website. Buy Once.">
+<meta property="og:description" content="Kajabi, simplified. A white-label coaching website we build for you — your brand, your domain, yours to own. One-time $500, not $150/month forever.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://designresearchgroup.github.io/coach-platform/">
 <meta property="og:site_name" content="The Bold Life Platform">
@@ -16,18 +16,20 @@
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The Bold Life Platform — own your coaching website">
+<meta property="og:image:alt" content="The Bold Life Platform — own your coaching website, buy once, $500">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Bold Life Platform — own your coaching website">
-<meta name="twitter:description" content="An off-the-shelf coaching website you buy once, customize, and own. No monthly subscription.">
+<meta name="twitter:description" content="Kajabi, simplified. Buy once, customize, own it. One-time $500, not $150/month.">
 <meta name="twitter:image" content="https://designresearchgroup.github.io/coach-platform/img/og.png">
 <link rel="canonical" href="https://designresearchgroup.github.io/coach-platform/">
 <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
-<meta name="theme-color" content="#7A5195">
+<meta name="theme-color" content="#DC343B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Fonts. If you change --font / --display in brand.css, change these too. -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;0,900;1,700;1,900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"The Bold Life Platform","description":"A white-label coaching website built for coaches to buy once, customize, and own — a simpler alternative to subscription platforms like Kajabi.","brand":{"@type":"Brand","name":"The Bold Life"},"category":"Coaching website software","offers":{"@type":"Offer","price":"500","priceCurrency":"USD","description":"One-time lifetime license"},"url":"https://designresearchgroup.github.io/coach-platform/"}
+</script>
 <style>
 /* ===== HumanData Design System v4 — tokens (humandata.id/ds) ===== */
 :root{
@@ -1516,83 +1518,112 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
 .stick .btn{margin-left:auto;flex-shrink:0;}
 @media(max-width:620px){.stick-txt{font-size:var(--text-sm);}}
 @media(max-width:460px){.stick-txt span{display:none;}}
-</style><!-- Brand layer: the ONE file you edit to re-brand. Loaded AFTER the scaffold
-     so it overrides the defaults. -->
-<link rel="stylesheet" href="brand.css">
+</style><style>
+/* ===== The Bold Life Platform — provider brand (burgundy + black) on the DS scaffold ===== */
+:root{
+  --font:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --display:'Montserrat','Poppins',sans-serif;
+  --accent:#DC343B;--accent-hover:#B7272E;
+  --accent-lt:rgba(220,52,59,.15);--accent-dim:rgba(220,52,59,.08);--accent-text:#fff;
+  --bd-focus:rgba(220,52,59,.6);
+}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){--bd-focus:rgba(220,52,59,.5);}}
+:root[data-theme="light"]{--bd-focus:rgba(220,52,59,.5);}
+[data-tint="a"]{--tint:#DC343B;--tint-dim:rgba(220,52,59,.07);}
+[data-tint="b"]{--tint:#6E1423;--tint-dim:rgba(110,20,35,.08);}
 
-<style>
-/* ---- Structural layout on top of the scaffold (shared; you rarely edit this) ---- */
-:root{--cp-max:1100px;}
-.cp-eyebrow{display:block;margin-bottom:var(--sp4);}
-.demo-flag{display:inline-flex;align-items:center;gap:var(--sp2);font-family:var(--mono);
-  font-size:var(--text-2xs);font-weight:var(--fw-bold);letter-spacing:var(--ls-wider);
-  text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);
-  padding:3px 9px;margin-bottom:var(--sp5);}
-.demo-flag .dot{width:6px;height:6px;background:var(--accent);}
-.demo-flag a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;}
-
+/* ---- sales layout ---- */
+.pl-eyebrow{display:block;margin-bottom:var(--sp4);}
 .hero-trust{display:flex;flex-wrap:wrap;gap:var(--sp2);margin-top:var(--sp6);}
+.anchor{scroll-margin-top:calc(var(--nav-h) + var(--sp6));}
+.nav-book .nav-book-sm{display:none;}
+@media(max-width:600px){.nav-book .nav-book-lg{display:none;}.nav-book .nav-book-sm{display:inline;}}
+@media(max-width:420px){.nav-logo-text{display:none;}}
 
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);
+/* Compare — two columns, one rented, one owned. */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);background:var(--bd);
+  border:1px solid var(--bd);margin-top:var(--sp8);}
+.vs-col{background:var(--bg1);padding:var(--sp8) var(--sp6);min-width:0;}
+.vs-col.win{background:var(--accent-dim);outline:2px solid var(--accent);outline-offset:-1px;}
+.vs-k{font-family:var(--mono);font-size:var(--text-2xs);font-weight:var(--fw-bold);
+  letter-spacing:var(--ls-wider);text-transform:uppercase;color:var(--t3);}
+.vs-col.win .vs-k{color:var(--accent);}
+.vs-name{font-family:var(--display);font-size:var(--text-2xl);font-weight:var(--fw-bold);
+  letter-spacing:var(--ls-tight);line-height:var(--lh-tight);margin:var(--sp2) 0 var(--sp2);}
+.vs-price{font-family:var(--mono);font-size:var(--text-3xl);font-weight:var(--fw-bold);
+  letter-spacing:var(--ls-tight);line-height:1;}
+.vs-price small{display:block;font-size:var(--text-sm);font-weight:var(--fw-regular);
+  color:var(--t3);letter-spacing:0;margin-top:var(--sp2);}
+.vs-col ul{list-style:none;padding:0;margin:var(--sp6) 0 0;display:flex;flex-direction:column;gap:var(--sp3);}
+.vs-col li{display:flex;gap:var(--sp3);font-size:var(--text-base);color:var(--t2);line-height:var(--lh-snug);}
+.vs-col li b{font-family:var(--mono);flex-shrink:0;font-weight:var(--fw-bold);}
+.vs-col.lose li b{color:var(--t4);}
+.vs-col.win li b{color:var(--accent);}
+@media(max-width:700px){.vs{grid-template-columns:1fr;}}
+
+/* How it works — 3 steps. */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);
   background:var(--bd);border:1px solid var(--bd);margin-top:var(--sp8);}
-.svc{background:var(--bg1);padding:var(--sp6);min-width:0;display:flex;flex-direction:column;gap:var(--sp3);}
-.svc-n{font-family:var(--mono);font-size:var(--text-2xs);letter-spacing:var(--ls-wider);
-  text-transform:uppercase;color:var(--accent);}
-.svc h3{font-size:var(--text-xl);font-weight:var(--fw-semi);letter-spacing:var(--ls-tight);
-  line-height:var(--lh-snug);margin:0;}
-.svc p{font-size:var(--text-base);color:var(--t2);line-height:var(--lh-relaxed);margin:0;}
-@media(max-width:860px){.svc-grid{grid-template-columns:1fr;}}
+.step-c{background:var(--bg1);padding:var(--sp8) var(--sp6);min-width:0;}
+.step-num{font-family:var(--mono);font-size:var(--text-sm);font-weight:var(--fw-bold);
+  letter-spacing:var(--ls-mono);color:var(--accent);}
+.step-c h3{font-size:var(--text-xl);font-weight:var(--fw-semi);letter-spacing:var(--ls-tight);
+  line-height:var(--lh-snug);margin:var(--sp4) 0 var(--sp3);}
+.step-c p{font-size:var(--text-base);color:var(--t2);line-height:var(--lh-relaxed);margin:0;}
+@media(max-width:760px){.steps{grid-template-columns:1fr;}}
 
-.about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);
-  gap:var(--sp10);align-items:start;}
-.about-grid p{color:var(--t2);font-size:var(--text-lg);line-height:var(--lh-relaxed);margin:0 0 var(--sp4);}
-.about-grid p b{color:var(--t1);font-weight:var(--fw-semi);}
-.about-side{background:var(--bg1);border:1px solid var(--bd);padding:var(--sp6);}
-.about-side .label{display:block;margin-bottom:var(--sp4);}
-@media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:var(--sp6);}}
+/* Case study. */
+.case{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);gap:var(--sp10);
+  align-items:center;margin-top:var(--sp8);}
+.case-shot{display:block;width:100%;height:auto;border:1px solid var(--bd2);
+  background:var(--bg1);}
+.case p{color:var(--t2);font-size:var(--text-lg);line-height:var(--lh-relaxed);margin:0 0 var(--sp4);}
+.case p b{color:var(--t1);font-weight:var(--fw-semi);}
+.case .sect-cta{margin-top:var(--sp5);}
+@media(max-width:860px){.case{grid-template-columns:1fr;gap:var(--sp6);}}
 
-.book{background:var(--bg1);border:1px solid var(--bd);padding:var(--sp12) var(--sp8);
-  margin-top:var(--sp8);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);
-  gap:var(--sp10);align-items:center;}
+/* Pricing. */
+.price-card{background:var(--bg1);border:1px solid var(--bd2);border-top:3px solid var(--accent);
+  padding:var(--sp10) var(--sp8);margin-top:var(--sp8);display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:var(--sp10);align-items:center;}
+.price-big{font-family:var(--mono);font-size:56px;font-weight:var(--fw-bold);letter-spacing:-.04em;
+  line-height:1;color:var(--t1);}
+.price-big s{color:var(--t4);font-size:var(--text-2xl);font-weight:var(--fw-bold);margin-left:var(--sp3);}
+.price-sub{font-family:var(--mono);font-size:var(--text-sm);color:var(--t3);letter-spacing:var(--ls-mono);margin-top:var(--sp3);}
+.price-card ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:var(--sp3);}
+.price-card li{display:flex;gap:var(--sp3);font-size:var(--text-base);color:var(--t2);line-height:var(--lh-snug);}
+.price-card li b{font-family:var(--mono);color:var(--accent);font-weight:var(--fw-bold);flex-shrink:0;}
+@media(max-width:760px){.price-card{grid-template-columns:1fr;padding:var(--sp8) var(--sp5);gap:var(--sp6);}}
+
+/* Contact. */
+.book{background:var(--bg1);border:1px solid var(--bd);padding:var(--sp12) var(--sp8);margin-top:var(--sp8);
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:var(--sp10);align-items:center;}
 .book h2{font-family:var(--display);font-size:var(--text-4xl);font-weight:var(--fw-semi);
   letter-spacing:var(--ls-tight);line-height:var(--lh-tight);margin:0 0 var(--sp4);}
 .book p{color:var(--t2);font-size:var(--text-lg);line-height:var(--lh-relaxed);margin:0;max-width:52ch;}
 .book-side{display:flex;flex-direction:column;gap:var(--sp3);}
 .book-side .btn{width:100%;}
-.book-mail{font-family:var(--mono);font-size:var(--text-sm);color:var(--t3);
-  letter-spacing:var(--ls-mono);text-align:center;}
+.book-mail{font-family:var(--mono);font-size:var(--text-sm);color:var(--t3);letter-spacing:var(--ls-mono);text-align:center;}
 .book-mail a{color:var(--accent);}
 @media(max-width:760px){.book{grid-template-columns:1fr;padding:var(--sp8) var(--sp5);gap:var(--sp6);}}
-
-.anchor{scroll-margin-top:calc(var(--nav-h) + var(--sp6));}
-.nav-book .nav-book-sm{display:none;}
-@media(max-width:600px){
-  .nav-book .nav-book-lg{display:none;}
-  .nav-book .nav-book-sm{display:inline;}
-}
-@media(max-width:380px){.nav-logo-text{display:none;}}
-
-/* The provider line in the footer — this is how The Bold Life Platform signs
-   each site it powers. Keep it or remove it; it's your site. */
-.powered{font-family:var(--mono);font-size:var(--text-xs);color:var(--t3);
-  letter-spacing:var(--ls-mono);margin-top:var(--sp4);}
-.powered a{color:var(--accent);}
+.honest{margin-top:var(--sp5);font-size:var(--text-sm);color:var(--t3);line-height:var(--lh-relaxed);max-width:74ch;}
+.honest b{color:var(--t2);font-weight:var(--fw-semi);}
 </style>
 
 <a class="btn btn-sm" href="#main" style="position:absolute;left:-9999px;top:0;z-index:1200;"
    onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-9999px';">Skip to content</a>
 
-<!-- ===== NAV =====  (edit the name + links) -->
 <nav class="nav">
   <div class="nav-inner">
-    <a class="nav-logo" href="#top" aria-label="Avery Rivers Coaching — home">
-      <span class="nav-logo-mark">AR</span>
-      <span class="nav-logo-text">AVERY&nbsp;RIVERS</span>
+    <a class="nav-logo" href="#top" aria-label="The Bold Life Platform — home">
+      <span class="nav-logo-mark">TBL</span>
+      <span class="nav-logo-text">THE&nbsp;BOLD&nbsp;LIFE&nbsp;PLATFORM</span>
     </a>
     <div class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="#how">How it works</a>
+      <a href="#compare">Compare</a>
+      <a href="#case">Case study</a>
+      <a href="#pricing">Pricing</a>
     </div>
     <div class="nav-actions">
       <button class="nav-btn" id="themeToggle" type="button" aria-label="Toggle color theme">
@@ -1601,7 +1632,7 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
           <circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
         </svg>
       </button>
-      <a class="btn btn-solid btn-sm nav-book" href="#contact"><span class="nav-book-lg">Book a call</span><span class="nav-book-sm">Book</span></a>
+      <a class="btn btn-solid btn-sm nav-book" href="#contact"><span class="nav-book-lg">Get your site</span><span class="nav-book-sm">Get it</span></a>
     </div>
   </div>
 </nav>
@@ -1613,84 +1644,146 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
 <header class="hero wrap">
   <div class="hero-grid">
     <div>
-      <span class="demo-flag"><span class="dot"></span> Live demo · The Bold Life Platform &mdash; <a href="https://www.theboldlife.coach/">own yours</a></span>
-      <span class="label-accent cp-eyebrow">Avery Rivers &middot; Certified Coach</span>
-      <h1>Coaching that helps you <em>do the brave thing.</em></h1>
+      <span class="label-accent pl-eyebrow">The Bold Life Platform &middot; For coaches</span>
+      <h1>Kajabi, simplified. And you <em>own it.</em></h1>
       <p class="hero-sub">
-        1:1 coaching for people ready to make a real change &mdash; a clear plan, honest
-        accountability, and someone in your corner who has done the work.
+        We build you a beautiful coaching website &mdash; your brand, your words, your domain &mdash;
+        and hand it over. One flat <b>$500</b>. No <b>$150-a-month</b> forever. It&rsquo;s yours.
       </p>
       <div class="sect-cta">
-        <a class="btn btn-solid btn-lg" href="#contact">Book a free call</a>
-        <a class="btn btn-primary btn-lg" href="#services">See the services</a>
+        <a class="btn btn-solid btn-lg" href="#contact">Get your site</a>
+        <a class="btn btn-primary btn-lg" href="#case">See the case study</a>
       </div>
       <div class="hero-trust">
-        <span class="badge badge-accent">Certified Coach</span>
-        <span class="badge badge-neutral">1:1 &amp; Groups</span>
-        <span class="badge badge-neutral">In person &amp; remote</span>
+        <span class="badge badge-accent">$500 one-time</span>
+        <span class="badge badge-neutral">No monthly fee</span>
+        <span class="badge badge-neutral">You own it</span>
+        <span class="badge badge-neutral">Built in days</span>
       </div>
     </div>
-    <aside class="about-side" aria-label="At a glance">
-      <span class="label">At a glance</span>
-      <div class="detail-row"><span class="detail-row-label">Focus</span><span class="detail-row-value">Life &amp; Leadership</span></div>
-      <div class="detail-row"><span class="detail-row-label">Format</span><span class="detail-row-value">1:1 · Groups</span></div>
-      <div class="detail-row"><span class="detail-row-label">Length</span><span class="detail-row-value">12&nbsp;weeks</span></div>
-      <div class="detail-row"><span class="detail-row-label">Serves</span><span class="detail-row-value">Everywhere · Remote</span></div>
+    <aside class="about-side" aria-label="Why coaches switch" style="background:var(--bg1);border:1px solid var(--bd);padding:var(--sp6);">
+      <span class="label" style="display:block;margin-bottom:var(--sp4);">The math</span>
+      <div class="detail-row"><span class="detail-row-label">Kajabi</span><span class="detail-row-value">~$1,800/yr</span></div>
+      <div class="detail-row"><span class="detail-row-label">Year two</span><span class="detail-row-value">~$3,600</span></div>
+      <div class="detail-row"><span class="detail-row-label">Year three</span><span class="detail-row-value">~$5,400</span></div>
+      <div class="detail-row is-next"><span class="detail-row-label"><b>Ours</b>Lifetime</span><span class="detail-row-value">$500 once</span></div>
     </aside>
   </div>
 </header>
 
-<!-- ===== SERVICES ===== -->
-<section class="sect anchor" id="services" data-tint="a">
+<!-- ===== COMPARE ===== -->
+<section class="sect anchor" id="compare" data-tint="a">
   <div class="wrap">
     <div class="sect-head reveal">
-      <span class="label-accent">Services</span>
-      <h2>Ways to work together.</h2>
-      <p>Edit these three cards to describe your own offers. Add or remove cards freely &mdash;
-         the grid adapts.</p>
+      <span class="label-accent">The difference</span>
+      <h2>Rent it forever, or own it once.</h2>
+      <p>The same site a coach actually needs &mdash; without the subscription, the sprawl, or the lock-in.</p>
     </div>
-    <div class="svc-grid reveal">
-      <article class="svc">
-        <span class="svc-n">01 — Signature program</span>
-        <h3>The 12-week 1:1</h3>
-        <p>A focused engagement to get clarity, make the move, and build momentum that lasts.</p>
-      </article>
-      <article class="svc">
-        <span class="svc-n">02 — Ongoing</span>
-        <h3>Monthly coaching</h3>
-        <p>Steady, flexible support for people who want a thinking partner in their corner.</p>
-      </article>
-      <article class="svc">
-        <span class="svc-n">03 — Groups</span>
-        <h3>Group programs</h3>
-        <p>Small-cohort coaching that brings structure, accountability, and a community.</p>
-      </article>
+    <div class="vs reveal">
+      <div class="vs-col lose">
+        <span class="vs-k">Renting — Kajabi</span>
+        <div class="vs-name">Kajabi</div>
+        <div class="vs-price">$150<small>per month &mdash; ~$1,800/yr, forever</small></div>
+        <ul>
+          <li><b>&times;</b> You rent &mdash; stop paying and it&rsquo;s gone</li>
+          <li><b>&times;</b> A sprawling suite you mostly don&rsquo;t use</li>
+          <li><b>&times;</b> Your site lives on their platform</li>
+          <li><b>&times;</b> Their templates, their limits</li>
+        </ul>
+      </div>
+      <div class="vs-col win">
+        <span class="vs-k">Owning — The Bold Life Platform</span>
+        <div class="vs-name">The Bold Life Platform</div>
+        <div class="vs-price">$500<small>one time &mdash; a lifetime license</small></div>
+        <ul>
+          <li><b>&check;</b> You own the site and the files, outright</li>
+          <li><b>&check;</b> Just what a coach needs &mdash; nothing you don&rsquo;t</li>
+          <li><b>&check;</b> Your own domain; host it free</li>
+          <li><b>&check;</b> Fully custom to your brand</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== ABOUT ===== -->
-<section class="sect anchor" id="about" data-tint="b">
+<!-- ===== HOW IT WORKS ===== -->
+<section class="sect anchor" id="how">
   <div class="wrap">
     <div class="sect-head reveal">
-      <span class="label-accent">About</span>
-      <h2>Meet your coach.</h2>
+      <span class="label-accent">How it works</span>
+      <h2>Yours in three steps.</h2>
+      <p>We do the building. You keep the keys.</p>
     </div>
-    <div class="about-grid reveal">
-      <div>
-        <p><b>Avery Rivers</b> is a certified coach who helps people make the changes they keep
-           putting off. This is placeholder copy &mdash; replace it with your own story, your
-           credentials, and why people work with you.</p>
-        <p>Tell them what you believe, who you help, and what it feels like to be on the other
-           side of the work. Keep it human. This is the part people read before they book.</p>
+    <div class="steps reveal">
+      <div class="step-c">
+        <span class="step-num">STEP 01</span>
+        <h3>Tell us your brand</h3>
+        <p>Your colours, your words, your offer. A short conversation and whatever you already have.</p>
       </div>
-      <aside class="about-side">
-        <span class="label">Credentials</span>
-        <div class="detail-row"><span class="detail-row-label">Certification</span><span class="detail-row-value">Your&nbsp;cert</span></div>
-        <div class="detail-row"><span class="detail-row-label">Experience</span><span class="detail-row-value">Your&nbsp;years</span></div>
-        <div class="detail-row"><span class="detail-row-label">Focus</span><span class="detail-row-value">Your&nbsp;niche</span></div>
-      </aside>
+      <div class="step-c">
+        <span class="step-num">STEP 02</span>
+        <h3>We build &amp; launch</h3>
+        <p>Your site, your domain, live in days &mdash; beautiful on every screen, fast, and accessible.</p>
+      </div>
+      <div class="step-c">
+        <span class="step-num">STEP 03</span>
+        <h3>You own it</h3>
+        <p>Host it free, forever, with no monthly fee. Bookings and payments run on your own Calendly &amp; Stripe.</p>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- ===== CASE STUDY ===== -->
+<section class="sect anchor" id="case" data-tint="b">
+  <div class="wrap">
+    <div class="sect-head reveal">
+      <span class="label-accent">Case study</span>
+      <h2>A real coaching brand, running on it.</h2>
+    </div>
+    <div class="case reveal">
+      <a href="https://designresearchgroup.github.io/bold-life/" aria-label="Visit the live Bold Life site">
+        <img class="case-shot" src="img/casestudy-boldlife.png"
+             alt="The Bold Life — career reinvention and leadership coaching — a website built on The Bold Life Platform" loading="lazy">
+      </a>
+      <div>
+        <p><b>The Bold Life</b> &mdash; career-reinvention and leadership coaching for ambitious women &mdash;
+           is built on this exact platform. Her brand, her voice, her domain.</p>
+        <p><b>Built in days. Fully owned. Zero monthly platform fee.</b> The same site serves her
+           1:1 clients and a government-contracting capability statement &mdash; proof the platform
+           flexes to a real practice.</p>
+        <div class="sect-cta">
+          <a class="btn btn-primary" href="https://designresearchgroup.github.io/bold-life/">Visit the live site &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section class="sect anchor" id="pricing">
+  <div class="wrap">
+    <div class="sect-head reveal">
+      <span class="label-accent">Pricing</span>
+      <h2>One price. Yours for good.</h2>
+    </div>
+    <div class="price-card reveal">
+      <div>
+        <div class="price-big">$500 <s>$150/mo</s></div>
+        <div class="price-sub">one-time lifetime license &middot; no subscription</div>
+      </div>
+      <ul>
+        <li><b>&check;</b> Custom-built coaching website</li>
+        <li><b>&check;</b> Your brand, your words, your domain</li>
+        <li><b>&check;</b> Light &amp; dark, mobile, accessible</li>
+        <li><b>&check;</b> You own the code and the files</li>
+        <li><b>&check;</b> Free hosting set up for you</li>
+        <li><b>&check;</b> Bookings &amp; payments on your own tools</li>
+      </ul>
+    </div>
+    <p class="honest reveal"><b>Straight talk:</b> the $500 covers building and launching your site, which
+      you then own and host for free. Need ongoing changes later? An optional care plan covers updates
+      and support &mdash; but you are never required to pay monthly to keep your site.</p>
   </div>
 </section>
 
@@ -1699,13 +1792,13 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
   <div class="wrap">
     <div class="book reveal">
       <div>
-        <h2>Ready to start?</h2>
-        <p>Replace this with your own invitation. Point the button at your email, your Calendly,
-           or whatever booking tool you already use &mdash; you own all of it.</p>
+        <h2>Own your coaching site.</h2>
+        <p>Tell us a little about your practice and we&rsquo;ll show you what yours could look like &mdash;
+           no obligation, no subscription.</p>
       </div>
       <div class="book-side">
-        <a class="btn btn-solid btn-lg" href="mailto:hello@example.com?subject=Coaching%20inquiry">Email to book</a>
-        <p class="book-mail">or write to<br><a href="mailto:hello@example.com">hello@example.com</a></p>
+        <a class="btn btn-solid btn-lg" href="mailto:Jamesyn@theboldlifecoaching.com?subject=The%20Bold%20Life%20Platform%20%E2%80%94%20I%20want%20my%20own%20site">Get your site</a>
+        <p class="book-mail">or write to<br><a href="mailto:Jamesyn@theboldlifecoaching.com">Jamesyn@theboldlifecoaching.com</a></p>
       </div>
     </div>
   </div>
@@ -1717,22 +1810,28 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
     <div class="footer-top">
       <div>
         <div class="footer-brand">
-          <span class="nav-logo-mark">AR</span>
-          <span class="nav-logo-text">AVERY&nbsp;RIVERS</span>
+          <span class="nav-logo-mark">TBL</span>
+          <span class="nav-logo-text">THE&nbsp;BOLD&nbsp;LIFE&nbsp;PLATFORM</span>
         </div>
-        <p>1:1 and group coaching for people ready to do the brave thing. Replace this line with
-           your own one-sentence summary.</p>
+        <p>Own your coaching website. A white-label coaching site we build for you &mdash; buy once,
+           customize, and own it. Provided by The Bold Life.</p>
       </div>
       <div class="footer-links">
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a href="mailto:hello@example.com">hello@example.com</a>
+        <a href="#how">How it works</a>
+        <a href="#compare">Compare</a>
+        <a href="#case">Case study</a>
+        <a href="#pricing">Pricing</a>
+        <a href="https://www.theboldlife.coach/">The Bold Life</a>
+        <a href="mailto:Jamesyn@theboldlifecoaching.com">Jamesyn@theboldlifecoaching.com</a>
       </div>
     </div>
     <div class="footer-bottom">
-      &copy; 2026 Avery Rivers Coaching. This is a demo built on The Bold Life Platform.
-      <span class="powered">Your platform, powered by <a href="https://www.theboldlife.coach/">The Bold Life</a> &mdash; buy once, customize, own it.</span>
+      &copy; 2026 The Bold Life. The Bold Life Platform is a white-label coaching website provided by
+      The Bold Life. &ldquo;Kajabi&rdquo; is a trademark of its owner, named here only for honest
+      comparison; The Bold Life is not affiliated with or endorsed by it. The Bold Life site is shown
+      as a live example of a site built on this platform. Pricing is a one-time license for building
+      and launching your site; third-party tools you choose (domain, Calendly, Stripe) are billed by
+      those providers.
     </div>
   </div>
 </footer>
@@ -1743,7 +1842,7 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
   "use strict";
   var root = document.documentElement;
   try{
-    var saved = localStorage.getItem('cp-theme');
+    var saved = localStorage.getItem('tblp-theme');
     if(saved === 'light' || saved === 'dark') root.setAttribute('data-theme', saved);
   }catch(e){}
   var btn = document.getElementById('themeToggle');
@@ -1752,9 +1851,8 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
     if(!cur) cur = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
     var next = cur === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', next);
-    try{ localStorage.setItem('cp-theme', next); }catch(e){}
+    try{ localStorage.setItem('tblp-theme', next); }catch(e){}
   }); }
-
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var els = [].slice.call(document.querySelectorAll('.reveal'));
   if(reduce || !els.length){ els.forEach(function(el){el.classList.add('in');}); return; }
