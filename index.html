@@ -1556,6 +1556,10 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
 .pl-eyebrow{display:block;margin-bottom:var(--sp4);}
 .hero-trust{display:flex;flex-wrap:wrap;gap:var(--sp2);margin-top:var(--sp6);}
 .anchor{scroll-margin-top:calc(var(--nav-h) + var(--sp6));}
+/* Real Bold Life logo on a white circular chip (reads on light + dark). */
+.nav-logo-img{height:36px;width:36px;display:block;object-fit:contain;
+  background:#fff;border-radius:50%;padding:2px;flex-shrink:0;}
+.footer-brand .nav-logo-img{height:40px;width:40px;}
 .nav-book .nav-book-sm{display:none;}
 @media(max-width:600px){.nav-book .nav-book-lg{display:none;}.nav-book .nav-book-sm{display:inline;}}
 @media(max-width:420px){.nav-logo-text{display:none;}}
@@ -1636,7 +1640,7 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
 <nav class="nav">
   <div class="nav-inner">
     <a class="nav-logo" href="#top" aria-label="The Bold Life Platform — home">
-      <span class="nav-logo-mark">TBL</span>
+      <img class="nav-logo-img" src="img/logo.png" alt="The Bold Life" width="36" height="36">
       <span class="nav-logo-text">THE&nbsp;BOLD&nbsp;LIFE&nbsp;PLATFORM</span>
     </a>
     <div class="nav-links">
@@ -1840,7 +1844,7 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
     <div class="footer-top">
       <div>
         <div class="footer-brand">
-          <span class="nav-logo-mark">TBL</span>
+          <img class="nav-logo-img" src="img/logo.png" alt="The Bold Life" width="36" height="36">
           <span class="nav-logo-text">THE&nbsp;BOLD&nbsp;LIFE&nbsp;PLATFORM</span>
         </div>
         <p>Everything a coach needs, for $9 a month. An AI-built, white-label coaching platform &mdash;
