@@ -1629,8 +1629,8 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
 <section class="hero wrap hero-in">
   <span class="label-accent" style="display:block;margin-bottom:var(--sp4);">Free tool &middot; The Bold Life Platform</span>
   <h1>What are you <em>really</em> paying?</h1>
-  <p class="hero-sub">Coaching platforms rent you software by the month, forever. Put in your plan and
-     watch the rent add up &mdash; then see what it costs to just <b>own</b> it.</p>
+  <p class="hero-sub">Coaching platforms bill you by the month, forever. Put in your plan and watch it
+     add up &mdash; then see the same thing on The Bold Life Platform for <b>$9 a month</b>.</p>
 </section>
 
 <section class="sect anchor" style="padding-top:0;border-top:none;" id="calc">
@@ -1676,33 +1676,33 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
       <div class="calc-out">
         <span class="calc-head-n" id="outLead">Over 3 years on Kajabi Growth, you&rsquo;ll pay</span>
         <div class="calc-big" id="outTotal">$8,964</div>
-        <p class="calc-big-sub">to <b>rent</b> software you never own. Stop paying, and it&rsquo;s gone.</p>
+        <p class="calc-big-sub">for coaching software &mdash; billed every month, for as long as you use it.</p>
 
         <dl class="calc-split">
           <div class="calc-cell own">
-            <dt>Own it instead</dt>
-            <dd id="outOwn">$545</dd>
+            <dt>The Bold Life Platform</dt>
+            <dd id="outOwn">$297</dd>
           </div>
           <div class="calc-cell keep">
-            <dt>You keep</dt>
-            <dd id="outSave">$8,419</dd>
+            <dt>You save</dt>
+            <dd id="outSave">$8,667</dd>
           </div>
         </dl>
 
-        <p class="calc-break">Ownership pays for itself in <b id="outBreak">about 2 months</b>. After that, every month on a subscription is money you didn&rsquo;t have to spend.</p>
+        <p class="calc-break">That&rsquo;s <b id="outBreak">about 30&times; more</b> than The Bold Life Platform &mdash; for software your clients can&rsquo;t tell apart.</p>
 
-        <p class="calc-rent">The actual software &mdash; hosting and a domain &mdash; costs about <b id="outSoftware">$45</b> over this period. The other <b id="outRent">$8,919</b> is rent.</p>
+        <p class="calc-rent">On Kajabi that&rsquo;s about <b id="outSoftware">$249</b> a month. The Bold Life Platform is <b id="outRent" style="color:var(--ok)">$9</b> a month &mdash; or $99 a year.</p>
 
         <div class="calc-cta">
-          <a class="btn btn-solid btn-lg" data-try href="index.html#pricing">Try it free &mdash; own it instead</a>
+          <a class="btn btn-solid btn-lg" data-try href="index.html#pricing">Try it free &mdash; 30 days</a>
         </div>
       </div>
     </div>
 
     <p class="calc-note">
       <b>How this is figured:</b> subscription total = your monthly price &times; 12 &times; the years you
-      pick. &ldquo;Own it&rdquo; = a one-time <b>$500</b> to own your site after a 30-day free trial, plus
-      roughly <b>$15/yr</b> for a domain (hosting is free). Kajabi plan prices shown are current as of 2026
+      pick. &ldquo;The Bold Life Platform&rdquo; = <b>$99/year</b> (the annual plan; it&rsquo;s $9/month
+      month-to-month), after a 30-day free trial. Kajabi plan prices shown are current as of 2026
       (Basic $179, Growth $249, Pro $499 per month; less on annual billing) &mdash; always
       <a href="https://kajabi.com/pricing">check Kajabi&rsquo;s page</a> and use <b>&ldquo;Mine&rdquo;</b> to
       enter exactly what you pay. Intro deals like &ldquo;$99 for 3 months&rdquo; are modeled as $99 for the first 3 months, then the regular price &mdash; because that&rsquo;s what they turn into. Kajabi also adds up to a <b>2% surcharge</b> on payments you take through
@@ -1720,8 +1720,8 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
           <span class="nav-logo-mark">TBL</span>
           <span class="nav-logo-text">THE&nbsp;BOLD&nbsp;LIFE&nbsp;PLATFORM</span>
         </div>
-        <p>Own your coaching website. Buy once, customize, and own it &mdash; instead of renting software
-           by the month, forever. Provided by The Bold Life.</p>
+        <p>Everything a coach needs, for $9 a month &mdash; one AI-built platform instead of a
+           $179-a-month subscription. Provided by The Bold Life.</p>
       </div>
       <div class="footer-links">
         <a href="index.html#how">How it works</a>
@@ -1763,7 +1763,7 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
     pro:    {name:'Kajabi Pro',    m:499, a:399},
     custom: {name:'your plan'}
   };
-  var OWN_ONCE = 500, DOMAIN_YR = 15;
+  var OUR_YR = 99, OUR_MO = 9;
   var state = {plan:'growth', bill:'m', years:3, intro:0};
   var INTRO = {price:99, months:3};
 
@@ -1780,14 +1780,6 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
     if(state.plan==='custom') return 'your plan';
     return PLANS[state.plan].name;
   }
-  function breakText(perMo){
-    if(perMo<=0) return 'immediately';
-    var mo = Math.ceil(OWN_ONCE / perMo);
-    if(mo<=1) return 'about 1 month';
-    if(mo<12) return 'about ' + mo + ' months';
-    var yr = (mo/12);
-    return 'about ' + (Math.round(yr*10)/10) + ' years';
-  }
   function render(){
     var perMo = monthly();
     var yrs = state.years;
@@ -1799,23 +1791,20 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
     } else {
       sub = perMo * totalMonths;
     }
-    var own = OWN_ONCE + DOMAIN_YR * yrs;
-    var save = sub - own;
-    var software = DOMAIN_YR * yrs;
-    var rent = Math.max(0, sub - software);
+    var ours = OUR_YR * yrs;          // The Bold Life Platform at $99/year
+    var save = sub - ours;
+    var mult = ours > 0 ? sub / ours : 0;
 
     document.getElementById('outLead').textContent =
       'Over ' + yrs + (yrs===1?' year':' years') + ' on ' + planLabel() + ', you’ll pay';
     document.getElementById('outTotal').textContent = money(sub);
-    document.getElementById('outOwn').textContent = money(own);
+    document.getElementById('outOwn').textContent = money(ours);
     document.getElementById('outSave').textContent = (save>=0?'':'−') + money(Math.abs(save));
-    document.getElementById('outBreak').textContent = breakText(perMo);
-    document.getElementById('outSoftware').textContent = money(software);
-    document.getElementById('outRent').textContent = money(rent);
+    document.getElementById('outBreak').textContent = 'about ' + Math.max(1, Math.round(mult)) + '× more';
+    document.getElementById('outSoftware').textContent = money(perMo);
 
-    // If subscription is actually cheaper (tiny price / short time), soften the color.
     var big = document.getElementById('outTotal');
-    big.style.color = sub > own ? 'var(--danger)' : 'var(--t1)';
+    big.style.color = sub > ours ? 'var(--danger)' : 'var(--t1)';
     var keep = document.querySelector('.calc-cell.keep dd');
     keep.style.color = save >= 0 ? 'var(--accent)' : 'var(--t3)';
   }

@@ -2,7 +2,7 @@
 
 The sales page is live. To actually take orders you need two things that only you
 can set up (they involve your money and your accounts): a **trial sign-up link**
-and, to convert trials, a **$500 Stripe payment link**. Plus a **domain**. Here's
+and a **Stripe subscription** ($9/month and $99/year). Plus a **domain**. Here's
 the whole path — about 20 minutes.
 
 > The page is already wired for all of this. Until you paste your links, every
@@ -13,8 +13,8 @@ the whole path — about 20 minutes.
 
 ## The offer (how it's framed on the page)
 
-**Free for 30 days → then $500 once, and you own it.** No subscription. The $500 is
-a one-time license; the client then owns and hosts their site for free.
+**Free for 30 days → then $9/month, or $99/year.** Everything included, cancel
+anytime. We host and maintain the site; the coach just uses it.
 
 ## 1. The trial sign-up link (the "Try it free" buttons)
 
@@ -34,26 +34,26 @@ var TRIAL_LINK = ""; // <-- paste your trial sign-up link here
 
 Every "Try it free" button instantly points to it. Commit and push — it's live.
 
-## 2. The $500 payment (to convert a trial to ownership)
+## 2. The subscription ($9/mo and $99/yr)
 
-Because this is a **free-trial-then-one-time-$500** offer (not a monthly
-subscription), the cleanest path is a one-time payment link you send near day 25:
+Set up two recurring prices so a trial converts to a paying subscriber:
 
 1. Create a free [Stripe](https://stripe.com) account (this is **your** account —
    payouts go to your bank).
-2. **Products → Payment Links → New.** One-time price **$500**, name it
-   "The Bold Life Platform — Lifetime License."
-3. Under **After payment**, set the confirmation redirect to your success page:
-   `https://<your-domain>/coach-platform/success.html` (or your domain root +
-   `/success.html` once you're on a custom domain).
-4. Turn on **collect customer name & email** (and a custom field for their domain).
-5. Copy the link (looks like `https://buy.stripe.com/...`). Send it to a client at
-   the end of their trial. That's the sale.
+2. **Products → add a product** "The Bold Life Platform," with two recurring
+   prices: **$9/month** and **$99/year**.
+3. Make a **Payment Link** for it. Turn on a **30-day free trial** on the price so
+   nothing is charged until day 30, and enable **collect customer name & email**
+   (plus a custom field for their domain).
+4. Under **After payment**, set the confirmation redirect to your success page:
+   `https://<your-domain>/success.html`.
+5. Copy the link (`https://buy.stripe.com/...`) and paste it into `TRIAL_LINK` in
+   both `index.html` and `calculator.html` — now "Try it free" starts the trial and
+   the subscription in one step. (Or keep `TRIAL_LINK` as a form/Calendly and send
+   the Stripe link by hand near day 25.)
 
-> Why not auto-charge after the trial? Stripe's automatic trials are for *monthly
-> subscriptions*, which bills forever — the opposite of "you own it." A one-time
-> $500 link, sent when the trial ends, keeps the promise honest. If you later want
-> it automated, collect a card at sign-up via Stripe and charge once on day 30.
+> A Stripe subscription with a 30-day trial is exactly the right tool: free for
+> 30 days, then $9/month or $99/year, and the customer can cancel anytime.
 
 ## 3. Get it on a proper domain
 
