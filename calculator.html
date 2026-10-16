@@ -1640,9 +1640,9 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
       <div class="calc-in">
         <span class="calc-lbl">Your plan</span>
         <div class="fchips" role="group" aria-label="Plan">
-          <button class="fchip" type="button" data-plan="basic">Basic</button>
-          <button class="fchip on" type="button" data-plan="growth">Growth</button>
-          <button class="fchip" type="button" data-plan="pro">Pro</button>
+          <button class="fchip" type="button" data-plan="basic">$179/mo</button>
+          <button class="fchip on" type="button" data-plan="growth">$249/mo</button>
+          <button class="fchip" type="button" data-plan="pro">$499/mo</button>
           <button class="fchip" type="button" data-plan="custom">Mine</button>
         </div>
         <div class="calc-custom hide" id="customWrap">
@@ -1674,7 +1674,7 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
 
       <!-- output -->
       <div class="calc-out">
-        <span class="calc-head-n" id="outLead">Over 3 years on Kajabi Growth, you&rsquo;ll pay</span>
+        <span class="calc-head-n" id="outLead">Over 3 years on a $249/mo plan, you&rsquo;ll pay</span>
         <div class="calc-big" id="outTotal">$8,964</div>
         <p class="calc-big-sub">for coaching software &mdash; billed every month, for as long as you use it.</p>
 
@@ -1691,7 +1691,7 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
 
         <p class="calc-break">That&rsquo;s <b id="outBreak">about 30&times; more</b> than The Bold Life Platform &mdash; for software your clients can&rsquo;t tell apart.</p>
 
-        <p class="calc-rent">On Kajabi that&rsquo;s about <b id="outSoftware">$249</b> a month. The Bold Life Platform is <b id="outRent" style="color:var(--ok)">$9</b> a month &mdash; or $99 a year.</p>
+        <p class="calc-rent">On your current platform that&rsquo;s about <b id="outSoftware">$249</b> a month. The Bold Life Platform is <b id="outRent" style="color:var(--ok)">$9</b> a month &mdash; or $99 a year.</p>
 
         <div class="calc-cta">
           <a class="btn btn-solid btn-lg" data-try href="index.html#pricing">Try it free &mdash; 30 days</a>
@@ -1702,12 +1702,11 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
     <p class="calc-note">
       <b>How this is figured:</b> subscription total = your monthly price &times; 12 &times; the years you
       pick. &ldquo;The Bold Life Platform&rdquo; = <b>$99/year</b> (the annual plan; it&rsquo;s $9/month
-      month-to-month), after a 30-day free trial. Kajabi plan prices shown are current as of 2026
-      (Basic $179, Growth $249, Pro $499 per month; less on annual billing) &mdash; always
-      <a href="https://kajabi.com/pricing">check Kajabi&rsquo;s page</a> and use <b>&ldquo;Mine&rdquo;</b> to
-      enter exactly what you pay. Intro deals like &ldquo;$99 for 3 months&rdquo; are modeled as $99 for the first 3 months, then the regular price &mdash; because that&rsquo;s what they turn into. Kajabi also adds up to a <b>2% surcharge</b> on payments you take through
-      your own Stripe, on top of Stripe&rsquo;s fees &mdash; not counted above. &ldquo;Kajabi&rdquo; is a
-      trademark of its owner, named here only for honest comparison; The Bold Life is not affiliated with it.
+      month-to-month, or $299 once to own it forever), after a 30-day free trial. The preset prices
+      ($179, $249, $499 per month) are typical of legacy coaching suites; use <b>&ldquo;Mine&rdquo;</b> to
+      enter exactly what you pay. Intro deals like &ldquo;$99 for 3 months&rdquo; are modeled as $99 for
+      the first 3 months, then the regular price &mdash; because that&rsquo;s what they turn into.
+      Figures are estimates for comparison; confirm current pricing with your provider.
     </p>
   </div>
 </section>
@@ -1758,9 +1757,9 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
 
   // ---- Calculator ----
   var PLANS = {
-    basic:  {name:'Kajabi Basic',  m:179, a:143},
-    growth: {name:'Kajabi Growth', m:249, a:199},
-    pro:    {name:'Kajabi Pro',    m:499, a:399},
+    basic:  {name:'a $179/mo plan', m:179, a:143},
+    growth: {name:'a $249/mo plan', m:249, a:199},
+    pro:    {name:'a $499/mo plan', m:499, a:399},
     custom: {name:'your plan'}
   };
   var OUR_YR = 99, OUR_MO = 9;

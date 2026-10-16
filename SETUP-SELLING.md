@@ -13,8 +13,10 @@ the whole path — about 20 minutes.
 
 ## The offer (how it's framed on the page)
 
-**Free for 30 days → then $9/month, or $99/year.** Everything included, cancel
-anytime. We host and maintain the site; the coach just uses it.
+**Free for 30 days → then $9/month, $99/year, or $299 once (forever).** Everything
+included, cancel the subscription anytime. It's the **self-hosted** version — the coach
+runs it themselves (free on GitHub Pages/Netlify, or their own host); the price licenses
+the software.
 
 ## 1. The trial sign-up link (the "Try it free" buttons)
 
@@ -40,8 +42,9 @@ Set up two recurring prices so a trial converts to a paying subscriber:
 
 1. Create a free [Stripe](https://stripe.com) account (this is **your** account —
    payouts go to your bank).
-2. **Products → add a product** "The Bold Life Platform," with two recurring
-   prices: **$9/month** and **$99/year**.
+2. **Products → add a product** "The Bold Life Platform," with three prices: two
+   recurring (**$9/month** and **$99/year**) and one one-time (**$299** — the forever
+   license).
 3. Make a **Payment Link** for it. Turn on a **30-day free trial** on the price so
    nothing is charged until day 30, and enable **collect customer name & email**
    (plus a custom field for their domain).

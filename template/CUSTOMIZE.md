@@ -1,8 +1,8 @@
 # Make it yours
 
-This is **your** coaching website. You bought it once; you own it; there's no
-monthly subscription. Here's how to turn this demo into your own site in about
-30 minutes. You don't need to be a developer.
+This is the **self-hosted** version of The Bold Life Platform — you run it yourself,
+for **$9 a month (or $99 a year)**. Here's how to turn this sample into your own
+site in about 30 minutes. You don't need to be a developer.
 
 Everything you need to change lives in **two files**: `brand.css` (how it looks)
 and `index.html` (what it says).
@@ -60,7 +60,8 @@ This is a plain static site — it runs anywhere. The simplest free option:
    your site automatically. Every change you push goes live on its own.
 
 You can also drag the folder onto Netlify, Cloudflare Pages, or any web host —
-it's just files. **No subscription, no platform fee. You own it.**
+it's just files. **You run it yourself; hosting is free. The $9/mo (or $99/yr)
+licenses the platform.**
 
 ## 5. Your own domain (optional)
 
