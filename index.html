@@ -1529,6 +1529,26 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
 }
 @media (prefers-color-scheme: light){:root:not([data-theme="dark"]){--bd-focus:rgba(220,52,59,.5);}}
 :root[data-theme="light"]{--bd-focus:rgba(220,52,59,.5);}
+
+/* --- Warmth pass: read as an extension of theboldlife.coach — aspirational,
+   feminine, warm. Colours unchanged (burgundy + black); this warms the cold
+   greys, softens the terminal-style mono labels, and washes heroes in sunrise
+   tones so the platform feels like her brand, not a technical dashboard. --- */
+:root{--bg:#130C0D;--bg1:#1B1214;--bg2:#241619;--bg3:#2E1C20;--sf-hover:#2E1C20;}
+:root[data-theme="dark"]{--bg:#130C0D;--bg1:#1B1214;--bg2:#241619;--bg3:#2E1C20;--sf-hover:#2E1C20;}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){
+  --bg:#FBF5F3;--bg1:#FFFFFF;--bg2:#F7EDEA;--bg3:#EFE0DC;--sf-hover:#F7EDEA;}}
+:root[data-theme="light"]{--bg:#FBF5F3;--bg1:#FFFFFF;--bg2:#F7EDEA;--bg3:#EFE0DC;--sf-hover:#F7EDEA;}
+/* Eyebrows & technical labels become warm sans, not terminal mono; numbers stay mono. */
+.label,.label-accent,.vs-k,.step-num,.calc-lbl,.calc-head-n,.track-k,.svc-n{
+  font-family:var(--font)!important;letter-spacing:.14em;font-weight:var(--fw-semi);}
+/* Aspirational sunrise wash behind every hero. */
+.hero{position:relative;isolation:isolate;}
+.hero::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(55% 80% at 90% -10%, rgba(220,52,59,.20), transparent 60%),
+    radial-gradient(60% 70% at 0% 112%, rgba(255,156,122,.16), transparent 58%);}
+
 [data-tint="a"]{--tint:#DC343B;--tint-dim:rgba(220,52,59,.07);}
 [data-tint="b"]{--tint:#6E1423;--tint-dim:rgba(110,20,35,.08);}
 

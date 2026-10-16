@@ -1527,6 +1527,21 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
 @media (prefers-color-scheme: light){:root:not([data-theme="dark"]){--bd-focus:rgba(220,52,59,.5);}}
 :root[data-theme="light"]{--bd-focus:rgba(220,52,59,.5);}
 
+/* --- Warmth pass (shared with the sales page): warm the greys, soften the mono
+   labels, and wash the hero in sunrise tones — an extension of theboldlife.coach. --- */
+:root{--bg:#130C0D;--bg1:#1B1214;--bg2:#241619;--bg3:#2E1C20;--sf-hover:#2E1C20;}
+:root[data-theme="dark"]{--bg:#130C0D;--bg1:#1B1214;--bg2:#241619;--bg3:#2E1C20;--sf-hover:#2E1C20;}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){
+  --bg:#FBF5F3;--bg1:#FFFFFF;--bg2:#F7EDEA;--bg3:#EFE0DC;--sf-hover:#F7EDEA;}}
+:root[data-theme="light"]{--bg:#FBF5F3;--bg1:#FFFFFF;--bg2:#F7EDEA;--bg3:#EFE0DC;--sf-hover:#F7EDEA;}
+.label,.label-accent,.vs-k,.step-num,.calc-lbl,.calc-head-n{
+  font-family:var(--font)!important;letter-spacing:.14em;font-weight:var(--fw-semi);}
+.hero{position:relative;isolation:isolate;}
+.hero::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(55% 80% at 90% -10%, rgba(220,52,59,.20), transparent 60%),
+    radial-gradient(60% 70% at 0% 112%, rgba(255,156,122,.16), transparent 58%);}
+
 .anchor{scroll-margin-top:calc(var(--nav-h) + var(--sp6));}
 .nav-book .nav-book-sm{display:none;}
 @media(max-width:600px){.nav-book .nav-book-lg{display:none;}.nav-book .nav-book-sm{display:inline;}}
@@ -1641,6 +1656,12 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
           <button class="fchip" type="button" data-bill="a">Annual (cheaper)</button>
         </div>
 
+        <span class="calc-lbl">Starting on an intro offer?</span>
+        <div class="fchips" role="group" aria-label="Intro offer" id="introChips">
+          <button class="fchip on" type="button" data-intro="0">No intro</button>
+          <button class="fchip" type="button" data-intro="1">$99 first 3 months</button>
+        </div>
+
         <span class="calc-lbl">How long will you run it?</span>
         <div class="fchips" role="group" aria-label="Years">
           <button class="fchip" type="button" data-years="1">1 yr</button>
@@ -1684,7 +1705,7 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
       roughly <b>$15/yr</b> for a domain (hosting is free). Kajabi plan prices shown are current as of 2026
       (Basic $179, Growth $249, Pro $499 per month; less on annual billing) &mdash; always
       <a href="https://kajabi.com/pricing">check Kajabi&rsquo;s page</a> and use <b>&ldquo;Mine&rdquo;</b> to
-      enter exactly what you pay. Kajabi also adds up to a <b>2% surcharge</b> on payments you take through
+      enter exactly what you pay. Intro deals like &ldquo;$99 for 3 months&rdquo; are modeled as $99 for the first 3 months, then the regular price &mdash; because that&rsquo;s what they turn into. Kajabi also adds up to a <b>2% surcharge</b> on payments you take through
       your own Stripe, on top of Stripe&rsquo;s fees &mdash; not counted above. &ldquo;Kajabi&rdquo; is a
       trademark of its owner, named here only for honest comparison; The Bold Life is not affiliated with it.
     </p>
@@ -1743,7 +1764,8 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
     custom: {name:'your plan'}
   };
   var OWN_ONCE = 500, DOMAIN_YR = 15;
-  var state = {plan:'growth', bill:'m', years:3};
+  var state = {plan:'growth', bill:'m', years:3, intro:0};
+  var INTRO = {price:99, months:3};
 
   function money(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
   function monthly(){
@@ -1769,7 +1791,14 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
   function render(){
     var perMo = monthly();
     var yrs = state.years;
-    var sub = perMo * 12 * yrs;
+    var totalMonths = 12 * yrs;
+    var sub;
+    if(state.intro){
+      var introMonths = Math.min(INTRO.months, totalMonths);
+      sub = INTRO.price + perMo * Math.max(0, totalMonths - introMonths);
+    } else {
+      sub = perMo * totalMonths;
+    }
     var own = OWN_ONCE + DOMAIN_YR * yrs;
     var save = sub - own;
     var software = DOMAIN_YR * yrs;
@@ -1813,6 +1842,9 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
   });
   [].slice.call(document.querySelectorAll('[data-years]')).forEach(function(b){
     b.addEventListener('click', function(){ state.years=parseInt(b.getAttribute('data-years'),10); activate(b.parentNode,b); render(); });
+  });
+  [].slice.call(document.querySelectorAll('[data-intro]')).forEach(function(b){
+    b.addEventListener('click', function(){ state.intro=parseInt(b.getAttribute('data-intro'),10); activate(b.parentNode,b); render(); });
   });
   var ca=document.getElementById('customAmt');
   if(ca){ ca.addEventListener('input', render); }
