@@ -124,8 +124,8 @@ button{font-family:inherit;}
 .btn[disabled]{opacity:.4;cursor:not-allowed;transform:none;}
 .btn-primary{color:var(--accent);border-color:var(--accent);}
 .btn-primary:hover:not([disabled]){background:var(--accent);color:var(--accent-text);}
-.btn-solid{background:var(--accent);color:#fff;border-color:var(--accent);}
-.btn-solid:hover:not([disabled]){background:var(--accent-hover);border-color:var(--accent-hover);}
+.btn-solid{background:transparent;color:var(--accent);border-color:var(--accent);}
+.btn-solid:hover:not([disabled]){background:var(--accent-dim);color:var(--accent);border-color:var(--accent);}
 .btn-lg{padding:14px 28px;font-size:var(--text-md);}
 .btn-sm{padding:7px 14px;font-size:var(--text-sm);}
 /* A button is as wide as its label needs. Stretching one to fill whatever
@@ -1005,7 +1005,7 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
   transition:background var(--dur-fast),color var(--dur-fast);}
 .el-pick:hover{background:var(--bg3);color:var(--t1);}
 .el-pick:focus-visible{outline:2px solid var(--bd-focus);outline-offset:-2px;}
-.el-pick.on{background:var(--accent);color:#fff;font-weight:var(--fw-semi);}
+.el-pick.on{background:var(--accent-dim);color:var(--accent);border-color:var(--accent);font-weight:var(--fw-semi);}
 .el.fund{border-top-color:var(--accent);}
 .el.ready{border-top-color:var(--cat,#7C3AED);}
 @keyframes reveal{
@@ -1385,7 +1385,7 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
   transition:background var(--dur-fast),color var(--dur-fast);}
 .fchip:hover{background:var(--bg3);color:var(--t1);}
 .fchip:focus-visible{outline:2px solid var(--bd-focus);outline-offset:-2px;}
-.fchip.on{background:var(--accent);color:#fff;font-weight:var(--fw-semi);}
+.fchip.on{background:var(--accent-dim);color:var(--accent);border-color:var(--accent);font-weight:var(--fw-semi);}
 
 /* Booking confirmation: the team section becomes the landing place after the
    scheduler closes, so the last thing seen is who is turning up. */
@@ -1706,7 +1706,7 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
     <p class="calc-note">
       <b>How this is figured:</b> subscription total = your monthly price &times; 12 &times; the years you
       pick. &ldquo;The Bold Life Platform&rdquo; = <b>$99/year</b> (the annual plan; it&rsquo;s $9/month
-      month-to-month, or $299 once to own it forever), after a 30-day free trial. The preset prices
+      month-to-month, or $399 once to own it forever), after a 30-day free trial. The preset prices
       ($179, $249, $499 per month) are typical of legacy coaching suites; use <b>&ldquo;Mine&rdquo;</b> to
       enter exactly what you pay. Intro deals like &ldquo;$99 for 3 months&rdquo; are modeled as $99 for
       the first 3 months, then the regular price &mdash; because that&rsquo;s what they turn into.

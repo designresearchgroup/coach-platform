@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The Bold Life Platform — Everything a Coach Needs, $9 a Month.</title>
-<meta name="description" content="Everything a coach needs in one AI-built platform — your brand, your site, your clients — for $9 a month, $99 a year, or $299 forever, after a 30-day free trial. One-twentieth the price of legacy coaching suites. See the live case study: The Bold Life.">
+<meta name="description" content="Everything a coach needs in one AI-built platform — your brand, your site, your clients — for $9 a month, $99 a year, or $399 forever, after a 30-day free trial. One-twentieth the price of legacy coaching suites. See the live case study: The Bold Life.">
 <meta name="author" content="The Bold Life">
 <meta property="og:title" content="The Bold Life Platform — Everything a Coach Needs, $9 a Month.">
-<meta property="og:description" content="Software eats software. Everything a coach needs in one AI-built platform — $9/mo, $99/yr, or $299 forever. One-twentieth the price of legacy suites.">
+<meta property="og:description" content="Software eats software. Everything a coach needs in one AI-built platform — $9/mo, $99/yr, or $399 forever. One-twentieth the price of legacy suites.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://designresearchgroup.github.io/coach-platform/">
 <meta property="og:site_name" content="The Bold Life Platform">
@@ -19,7 +19,7 @@
 <meta property="og:image:alt" content="The Bold Life Platform — everything a coach needs, $9 a month">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Bold Life Platform — $9 a month, all in">
-<meta name="twitter:description" content="Software eats software. Everything a coach needs, AI-built, for $9/mo, $99/yr, or $299 forever. One-twentieth the price of legacy suites.">
+<meta name="twitter:description" content="Software eats software. Everything a coach needs, AI-built, for $9/mo, $99/yr, or $399 forever. One-twentieth the price of legacy suites.">
 <meta name="twitter:image" content="https://designresearchgroup.github.io/coach-platform/img/og.png">
 <link rel="canonical" href="https://designresearchgroup.github.io/coach-platform/">
 <link rel="icon" type="image/png" href="img/favicon.png">
@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;0,900;1,700;1,900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Product","name":"The Bold Life Platform","description":"An AI-built, white-label coaching platform for coaches — everything in one place for $9/month, $99/year, or a $299 one-time license, after a 30-day free trial. A low-cost alternative to legacy coaching suites.","brand":{"@type":"Brand","name":"The Bold Life"},"category":"Coaching platform software","offers":{"@type":"Offer","price":"9","priceCurrency":"USD","description":"Per month; or $99/year; or $299 one-time; 30-day free trial"},"url":"https://designresearchgroup.github.io/coach-platform/"}
+{"@context":"https://schema.org","@type":"Product","name":"The Bold Life Platform","description":"An AI-built, white-label coaching platform for coaches — everything in one place for $9/month, $99/year, or a $399 one-time license, after a 30-day free trial. A low-cost alternative to legacy coaching suites.","brand":{"@type":"Brand","name":"The Bold Life"},"category":"Coaching platform software","offers":{"@type":"Offer","price":"9","priceCurrency":"USD","description":"Per month; or $99/year; or $399 one-time; 30-day free trial"},"url":"https://designresearchgroup.github.io/coach-platform/"}
 </script>
 <style>
 /* ===== HumanData Design System v4 — tokens (humandata.id/ds) ===== */
@@ -127,8 +127,8 @@ button{font-family:inherit;}
 .btn[disabled]{opacity:.4;cursor:not-allowed;transform:none;}
 .btn-primary{color:var(--accent);border-color:var(--accent);}
 .btn-primary:hover:not([disabled]){background:var(--accent);color:var(--accent-text);}
-.btn-solid{background:var(--accent);color:#fff;border-color:var(--accent);}
-.btn-solid:hover:not([disabled]){background:var(--accent-hover);border-color:var(--accent-hover);}
+.btn-solid{background:transparent;color:var(--accent);border-color:var(--accent);}
+.btn-solid:hover:not([disabled]){background:var(--accent-dim);color:var(--accent);border-color:var(--accent);}
 .btn-lg{padding:14px 28px;font-size:var(--text-md);}
 .btn-sm{padding:7px 14px;font-size:var(--text-sm);}
 /* A button is as wide as its label needs. Stretching one to fill whatever
@@ -1008,7 +1008,7 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
   transition:background var(--dur-fast),color var(--dur-fast);}
 .el-pick:hover{background:var(--bg3);color:var(--t1);}
 .el-pick:focus-visible{outline:2px solid var(--bd-focus);outline-offset:-2px;}
-.el-pick.on{background:var(--accent);color:#fff;font-weight:var(--fw-semi);}
+.el-pick.on{background:var(--accent-dim);color:var(--accent);border-color:var(--accent);font-weight:var(--fw-semi);}
 .el.fund{border-top-color:var(--accent);}
 .el.ready{border-top-color:var(--cat,#7C3AED);}
 @keyframes reveal{
@@ -1388,7 +1388,7 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
   transition:background var(--dur-fast),color var(--dur-fast);}
 .fchip:hover{background:var(--bg3);color:var(--t1);}
 .fchip:focus-visible{outline:2px solid var(--bd-focus);outline-offset:-2px;}
-.fchip.on{background:var(--accent);color:#fff;font-weight:var(--fw-semi);}
+.fchip.on{background:var(--accent-dim);color:var(--accent);border-color:var(--accent);font-weight:var(--fw-semi);}
 
 /* Booking confirmation: the team section becomes the landing place after the
    scheduler closes, so the last thing seen is who is turning up. */
@@ -1673,7 +1673,7 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
       <h1>Software eats software. <em>Every&nbsp;time.</em></h1>
       <p class="hero-sub">
         The coaching suite you&rsquo;ve been overpaying for &mdash; rebuilt by AI, for <b>$9 a month</b>.
-        Everything you need: your brand, your site, your clients. $9/mo, $99/yr, or $299 forever.
+        Everything you need: your brand, your site, your clients. $9/mo, $99/yr, or $399 forever.
       </p>
       <div class="sect-cta">
         <a class="btn btn-solid btn-lg" data-try href="#pricing">Try it free &mdash; 30 days</a>
@@ -1683,7 +1683,7 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
         <span class="badge badge-accent">30-day free trial</span>
         <span class="badge badge-neutral">AI-built</span>
         <span class="badge badge-neutral">$9/mo or $99/yr</span>
-        <span class="badge badge-neutral">or $299 forever</span>
+        <span class="badge badge-neutral">or $399 forever</span>
       </div>
     </div>
     <aside class="about-side" aria-label="Why coaches switch" style="background:var(--bg1);border:1px solid var(--bd);padding:var(--sp6);">
@@ -1719,9 +1719,9 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
       <div class="vs-col win">
         <span class="vs-k">The Bold Life Platform</span>
         <div class="vs-name">The Bold Life Platform</div>
-        <div class="vs-price">$9<small>per month &mdash; or $99/yr, or $299 once. Free for 30 days.</small></div>
+        <div class="vs-price">$9<small>per month &mdash; or $99/yr, or $399 once. Free for 30 days.</small></div>
         <ul>
-          <li><b>&check;</b> $9/mo, $99/yr, or $299 once &mdash; forever</li>
+          <li><b>&check;</b> $9/mo, $99/yr, or $399 once &mdash; forever</li>
           <li><b>&check;</b> Everything a coach needs, nothing you don&rsquo;t</li>
           <li><b>&check;</b> Your brand, your domain, AI-built</li>
           <li><b>&check;</b> No setup fees, no payment surcharges</li>
@@ -1799,7 +1799,7 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
     <div class="price-card reveal">
       <div>
         <div class="price-big">$9<span style="font-size:var(--text-2xl);color:var(--t3);letter-spacing:0;"> /mo</span></div>
-        <div class="price-sub">or $99 a year &mdash; or $299 once and it&rsquo;s yours forever. Everything included; start with a 30-day free trial.</div>
+        <div class="price-sub">or $99 a year &mdash; or $399 once and it&rsquo;s yours forever. Everything included; start with a 30-day free trial.</div>
         <div class="sect-cta" style="margin-top:var(--sp6);">
           <a class="btn btn-solid btn-lg" data-try href="#contact">Start your free trial</a>
         </div>
@@ -1814,7 +1814,7 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
       </ul>
     </div>
     <p class="honest reveal"><b>Straight talk:</b> start free for 30 days. Keep it and it&rsquo;s
-      <b>$9 a month</b>, <b>$99 a year</b>, or <b>$299 once</b> to own it forever &mdash; everything
+      <b>$9 a month</b>, <b>$99 a year</b>, or <b>$399 once</b> to own it forever &mdash; everything
       included, and you can cancel the subscription anytime. All three are the self-hosted version:
       you run your site (hosting is free). We confirm before the first charge; no surprise billing.
       Your domain and the payment/booking tools you choose (Stripe, Calendly) are billed by those providers.</p>
@@ -1863,7 +1863,7 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
     <div class="footer-bottom">
       &copy; 2026 The Bold Life. The Bold Life Platform is an AI-built, white-label coaching platform
       provided by The Bold Life. The Bold Life site is shown as a live example of a site built on this
-      platform. Pricing is $9/month, $99/year, or a $299 one-time license, after a 30-day free trial;
+      platform. Pricing is $9/month, $99/year, or a $399 one-time license, after a 30-day free trial;
       it is the self-hosted version (you run your site), and the domain and payment/booking tools you
       choose are billed by those providers. Comparison figures are typical prices for legacy coaching
       suites.
