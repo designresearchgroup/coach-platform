@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Bold Life — the full demo</title>
+<meta name="description" content="The Bold Life — see the whole platform, the pricing, why it beats a rented suite, and decide. Built and run by a real coach with tech-world experience.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#DC343B">
+<meta property="og:title" content="The Bold Life — the full demo">
+<meta property="og:description" content="See the whole platform, the pricing, and why it wins. Own it, don't rent it.">
+<meta property="og:image" content="img/og.png">
+<link rel="icon" href="img/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Poppins:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#DC343B; --accent-hover:#B7272E; --accent-lt:rgba(220,52,59,.09);
+    --ink:#1b1512; --t2:#5c524c; --t3:#8a7e76;
+    --bg:#f7f3f0; --card:#ffffff; --bd:#e7ded7; --bd2:#d8ccc3;
+    --font:'Poppins',-apple-system,BlinkMacSystemFont,sans-serif;
+    --display:'Montserrat',var(--font); --mono:'IBM Plex Mono',monospace;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .label{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+
+  nav{border-bottom:1px solid var(--bd);position:sticky;top:0;background:rgba(247,243,240,.9);backdrop-filter:blur(8px);z-index:20}
+  nav .wrap{display:flex;align-items:center;gap:11px;height:66px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:-.01em}
+  .brand img{width:36px;height:36px;border-radius:50%;background:#fff;object-fit:contain}
+  .brand small{display:block;font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.2em;color:var(--t3);text-transform:uppercase;margin-top:-2px}
+  .nav-sp{flex:1}
+  .nav-cta{font-family:var(--font);font-weight:600;font-size:14px;color:var(--accent);border:1.5px solid var(--accent);padding:9px 18px;text-decoration:none}
+  .nav-cta:hover{background:var(--accent-lt)}
+
+  .hero{text-align:center;padding:84px 0 48px}
+  .hero h1{font-family:var(--display);font-weight:900;font-size:clamp(34px,5.6vw,60px);line-height:1.03;letter-spacing:-.025em;margin:18px auto 0;max-width:880px}
+  .hero h1 .r{color:var(--accent)}
+  .hero .lead{font-size:clamp(17px,2.3vw,20px);color:var(--t2);max-width:650px;margin:22px auto 0}
+
+  section.band{padding:62px 0;border-top:1px solid var(--bd)}
+  .sec-head{text-align:center;max-width:680px;margin:0 auto 42px}
+  .sec-head h2{font-family:var(--display);font-weight:800;font-size:clamp(26px,4vw,38px);letter-spacing:-.02em;line-height:1.1;margin-top:10px}
+  .sec-head p{color:var(--t2);font-size:17px;margin-top:12px}
+
+  .phases{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--bd)}
+  @media(max-width:820px){.phases{grid-template-columns:1fr}}
+  .phase{padding:30px 26px;border-right:1px solid var(--bd);background:var(--card)}
+  .phase:last-child{border-right:none}
+  @media(max-width:820px){.phase{border-right:none;border-bottom:1px solid var(--bd)}.phase:last-child{border-bottom:none}}
+  .phase .when{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--t3)}
+  .phase h3{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-.01em;margin:6px 0 4px}
+  .tag{display:inline-block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 9px;border:1px solid var(--accent);color:var(--accent);margin-bottom:18px}
+  .tag.live{border-color:#1f7a4d;color:#1f7a4d}
+  .phase ul{list-style:none;display:flex;flex-direction:column;gap:13px}
+  .phase li{font-size:14.5px;color:var(--t2);padding-left:20px;position:relative;line-height:1.5}
+  .phase li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;background:var(--accent)}
+  .phase li b{color:var(--ink);font-weight:600}
+
+  .idea{border:1px solid var(--bd2);background:var(--card);padding:48px 44px;text-align:center}
+  .idea h2{font-family:var(--display);font-weight:900;font-size:clamp(26px,4.2vw,40px);letter-spacing:-.02em;line-height:1.08;margin:12px auto 0;max-width:780px}
+  .idea h2 .r{color:var(--accent)}
+  .idea p{color:var(--t2);font-size:16px;max-width:680px;margin:18px auto 0}
+  .flow{display:flex;gap:0;justify-content:center;flex-wrap:wrap;margin-top:30px}
+  .flow .step{font-family:var(--display);font-weight:800;font-size:15px;color:var(--ink);border:1px solid var(--bd2);padding:12px 20px}
+  .flow .arw{display:flex;align-items:center;padding:0 14px;color:var(--accent);font-weight:700}
+  @media(max-width:620px){.flow{flex-direction:column;align-items:stretch}.flow .arw{justify-content:center;padding:8px 0;transform:rotate(90deg)}}
+
+  .founder{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;border:1px solid var(--bd);background:var(--card);padding:34px}
+  @media(max-width:620px){.founder{grid-template-columns:1fr;text-align:center}}
+  .founder .mark{width:104px;height:104px;border-radius:50%;background:#fff;border:1px solid var(--bd);object-fit:contain;padding:6px}
+  @media(max-width:620px){.founder .mark{margin:0 auto}}
+  .founder h3{font-family:var(--display);font-weight:800;font-size:22px}
+  .founder .cred{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:4px 0 12px}
+  .founder p{color:var(--t2);font-size:15.5px}
+
+  .decide{text-align:center;padding:72px 0 30px}
+  .decide h2{font-family:var(--display);font-weight:900;font-size:clamp(28px,4.6vw,46px);letter-spacing:-.025em;line-height:1.05;max-width:760px;margin:0 auto}
+  .decide h2 .r{color:var(--accent)}
+  .decide p{color:var(--t2);font-size:17px;margin:18px auto 0;max-width:620px}
+  .decide .cta{display:inline-flex;margin-top:28px;font-family:var(--font);font-weight:600;font-size:16px;color:var(--accent);border:1.5px solid var(--accent);padding:14px 30px;text-decoration:none}
+  .decide .cta:hover{background:var(--accent-lt)}
+
+  footer{border-top:1px solid var(--bd);padding:30px 0;color:var(--t3);font-size:13px;font-family:var(--mono);text-align:center;letter-spacing:.04em}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <span class="brand"><img src="img/logo.png" alt="The Bold Life"><span>The Bold Life<small>The full demo</small></span></span>
+  <span class="nav-sp"></span>
+  <a class="nav-cta" href="#decide">Get started</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <p class="label">The future is here</p>
+  <h1>Women, empowered by <span class="r">technology</span> and <span class="r">Edutech</span>.</h1>
+  <p class="lead">Where The Bold Life is today, and where it goes &mdash; a business built fast with AI, so the coaching scales and the woman who built it owns it. Look through it all, then decide.</p>
+</div></header>
+
+<section class="band"><div class="wrap">
+  <div class="sec-head">
+    <p class="label">See it live</p>
+    <h2>It&rsquo;s real &mdash; click any of it.</h2>
+    <p>Not slides. The actual, live product &mdash; open it in a new tab.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px">
+    <a href="https://designresearchgroup.github.io/boldlife-coach-app/" target="_blank" rel="noopener" style="border:1px solid var(--bd2);padding:16px 18px;font-family:var(--display);font-weight:700;color:var(--ink);text-decoration:none">The app &rarr;</a>
+    <a href="https://designresearchgroup.github.io/boldlife-coach-app/download.html" target="_blank" rel="noopener" style="border:1px solid var(--bd2);padding:16px 18px;font-family:var(--display);font-weight:700;color:var(--ink);text-decoration:none">Download &mdash; Mac &amp; Windows &rarr;</a>
+    <a href="https://designresearchgroup.github.io/bold-life/" target="_blank" rel="noopener" style="border:1px solid var(--bd2);padding:16px 18px;font-family:var(--display);font-weight:700;color:var(--ink);text-decoration:none">Your brand site &rarr;</a>
+    <a href="https://designresearchgroup.github.io/coach-platform/" target="_blank" rel="noopener" style="border:1px solid var(--bd2);padding:16px 18px;font-family:var(--display);font-weight:700;color:var(--ink);text-decoration:none">The platform for coaches &rarr;</a>
+    <a href="https://designresearchgroup.github.io/coach-platform/calculator.html" target="_blank" rel="noopener" style="border:1px solid var(--bd2);padding:16px 18px;font-family:var(--display);font-weight:700;color:var(--ink);text-decoration:none">What you&rsquo;d really pay &rarr;</a>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="sec-head">
+    <p class="label">The model</p>
+    <h2>An agentic way to run a coaching business.</h2>
+    <p>Your AI agent runs the back office &mdash; finds clients, markets the skill, handles intake, schedules classes, writes the follow-up. And the same off-the-shelf platform <b>coaches other coaches</b> to run leaner: less software, lower overhead, more time actually coaching.</p>
+  </div>
+  <div class="flow">
+    <span class="step">Find clients</span><span class="arw">&middot;</span>
+    <span class="step">Market the skill</span><span class="arw">&middot;</span>
+    <span class="step">Intake</span><span class="arw">&middot;</span>
+    <span class="step">Schedule</span><span class="arw">&middot;</span>
+    <span class="step">Follow-up</span>
+  </div>
+  <p class="lead" style="text-align:center;max-width:680px;margin:26px auto 0;color:var(--t2);font-size:16px">Not just coaching clients &mdash; coaching the coaches. Every coach who runs on this cuts their overhead and keeps what they build.</p>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="sec-head">
+    <p class="label">Why this, not a rented suite</p>
+    <h2>What you get that Kajabi doesn&rsquo;t.</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px">
+    <div style="border:1px solid var(--bd);background:var(--card);padding:24px"><strong style="font-family:var(--display);font-size:17px">You own it</strong><p style="color:var(--t2);font-size:14px;margin-top:6px">Pay once and keep it forever, or self-host. Kajabi rents to you every month &mdash; stop paying and it all vanishes.</p></div>
+    <div style="border:1px solid var(--bd);background:var(--card);padding:24px"><strong style="font-family:var(--display);font-size:17px">Native apps</strong><p style="color:var(--t2);font-size:14px;margin-top:6px">Real Mac &amp; Windows apps your clients install. Kajabi is a shared web app.</p></div>
+    <div style="border:1px solid var(--bd);background:var(--card);padding:24px"><strong style="font-family:var(--display);font-size:17px">A real live classroom</strong><p style="color:var(--t2);font-size:14px;margin-top:6px">Group video, screen-share, hand-raise, recording &mdash; built in. Kajabi has no true live class.</p></div>
+    <div style="border:1px solid var(--bd);background:var(--card);padding:24px"><strong style="font-family:var(--display);font-size:17px">Your own AI agent</strong><p style="color:var(--t2);font-size:14px;margin-top:6px">It finds clients, markets, handles intake, schedules, and writes follow-ups &mdash; in your voice, on your data. No one else has this.</p></div>
+    <div style="border:1px solid var(--bd);background:var(--card);padding:24px"><strong style="font-family:var(--display);font-size:17px">Your customer data</strong><p style="color:var(--t2);font-size:14px;margin-top:6px">Your contacts, your list, your clients &mdash; yours, not locked inside someone else&rsquo;s software.</p></div>
+    <div style="border:1px solid var(--bd);background:var(--card);padding:24px"><strong style="font-family:var(--display);font-size:17px">About 1/20 the price</strong><p style="color:var(--t2);font-size:14px;margin-top:6px">From $9/mo vs the ~$179/mo going rate &mdash; built lean with AI, so the savings are real.</p></div>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="sec-head">
+    <p class="label">What it costs</p>
+    <h2>Own it, don&rsquo;t rent it.</h2>
+    <p>Run it yourself monthly or yearly &mdash; or pay once and own it for good.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;max-width:760px;margin:0 auto">
+    <div style="border:1px solid var(--bd);background:var(--card);padding:24px;text-align:center"><div style="font-family:var(--mono);font-weight:700;font-size:30px;color:var(--ink)">$9<span style="font-size:15px;color:var(--t3)">/mo</span></div><div style="font-size:13px;color:var(--t2);margin-top:6px">Self-host, monthly</div></div>
+    <div style="border:1px solid var(--bd);background:var(--card);padding:24px;text-align:center"><div style="font-family:var(--mono);font-weight:700;font-size:30px;color:var(--ink)">$99<span style="font-size:15px;color:var(--t3)">/yr</span></div><div style="font-size:13px;color:var(--t2);margin-top:6px">Self-host, yearly</div></div>
+    <div style="border:1.5px solid var(--accent);background:var(--card);padding:24px;text-align:center"><div style="font-family:var(--mono);font-weight:700;font-size:30px;color:var(--ink)">$399</div><div style="font-size:13px;color:var(--t2);margin-top:6px">Pay once. Yours for life.</div></div>
+  </div>
+  <p style="text-align:center;font-family:var(--mono);font-size:13px;color:var(--t3);margin-top:16px">A rented suite runs ~$179/mo &mdash; about $2,148 a year, forever, and you own nothing at the end. Optional priority support available.</p>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="idea">
+    <p class="label">The organic way to grow</p>
+    <h2>Own the platform. <span class="r">Own your customers.</span></h2>
+    <p>Selling your coaching on a platform you own is the organic way to grow &mdash; you control the experience, you keep the relationship, and your customer data stays yours. Every client you add builds <b>your</b> asset, not your landlord&rsquo;s. Rent a suite and you&rsquo;re growing someone else&rsquo;s company; own it and you compound equity, not expenses.</p>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="sec-head"><p class="label">Tested in the real world</p><h2>Built and run by a real coach &mdash; with tech-world experience.</h2></div>
+  <div class="founder">
+    <img class="mark" src="img/logo.png" alt="The Bold Life">
+    <div>
+      <h3>Jamesyn Snitker</h3>
+      <p class="cred">ICF-PCC coach &middot; came up through tech (MedTech)</p>
+      <p>This isn&rsquo;t theory. The Bold Life is built and used every day by a certified coach who came up through tech before coaching &mdash; a working coach with the technical depth to vet it, running her own business on it. If it holds up for her practice, it holds up for yours.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="sec-head">
+    <p class="label">The roadmap</p>
+    <h2>From live today to a category of its own.</h2>
+    <p>Honest about what&rsquo;s shipped, what&rsquo;s in build, and what&rsquo;s the vision.</p>
+  </div>
+  <div class="phases">
+    <div class="phase">
+      <p class="when">Now</p>
+      <h3>It&rsquo;s real</h3>
+      <span class="tag live">Shipped &amp; live</span>
+      <ul>
+        <li><b>The Bold Life site</b> &mdash; her brand, her voice, live.</li>
+        <li><b>The platform + price calculator</b> &mdash; the ownable coaching platform, live.</li>
+        <li><b>The coaching app</b> &mdash; Mac &amp; Windows, downloadable: recorded curriculum player + a live-session room.</li>
+        <li><b>The AI agent + Command center</b> &mdash; run the whole business from one place.</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <p class="when">Next &middot; 0&ndash;12 months</p>
+      <h3>It scales</h3>
+      <span class="tag">In build</span>
+      <ul>
+        <li><b>Real curriculum</b> loaded; live video wired for production.</li>
+        <li><b>In the stores</b> &mdash; Mac App Store &amp; Microsoft Store.</li>
+        <li><b>Paid path live</b> &mdash; $9/mo, $99/yr, $399 for life; first paying coaches.</li>
+        <li><b>Marketplace beta</b> &mdash; rent-a-coach, matching coaches to clients.</li>
+        <li><b>SEO + rollout</b> &mdash; a tech platform built by a woman founder.</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <p class="when">The future &middot; 12&ndash;36 months</p>
+      <h3>It takes over</h3>
+      <span class="tag">Vision</span>
+      <ul>
+        <li><b>Workforce infrastructure</b> &mdash; coaching becomes the on-ramp to real jobs.</li>
+        <li><b>Reshoring</b> &mdash; as US business brings talent home, train and route <b>women</b> into those roles.</li>
+        <li><b>B2G &amp; future-of-work</b> funding and contracts open up.</li>
+        <li><b>The category brand</b> for women&rsquo;s empowerment &mdash; owned, not rented.</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<div class="decide" id="decide"><div class="wrap">
+  <p class="label">Easy to decide</p>
+  <h2>Everything you saw is <span class="r">yours</span> &mdash; for less than a rounding error.</h2>
+  <p>Own your coaching business, with AI running the back office. Start free, and when you&rsquo;re ready it&rsquo;s $9 a month or $399 for life. The one step to turn your AI on is a two-minute setup &mdash; James will walk you through it.</p>
+  <a class="cta" href="https://designresearchgroup.github.io/boldlife-coach-app/" target="_blank" rel="noopener">Open the platform &rarr;</a>
+</div></div>
+
+<footer><div class="wrap">The Bold Life &middot; built by HumanData &middot; prepared for Jamesyn</div></footer>
+
+</body>
+</html>
