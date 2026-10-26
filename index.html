@@ -1794,15 +1794,18 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
   <div class="wrap">
     <div class="sect-head reveal">
       <span class="label-accent">Pricing</span>
-      <h2>Free for 30 days. Then $9 a month.</h2>
+      <h2>Everything a coach needs. Pick your plan.</h2>
     </div>
     <div class="price-card reveal">
       <div>
         <div class="price-big">$9<span style="font-size:var(--text-2xl);color:var(--t3);letter-spacing:0;"> /mo</span></div>
-        <div class="price-sub">or $99 a year &mdash; or $399 once and it&rsquo;s yours forever. Everything included; start with a 30-day free trial.</div>
-        <div class="sect-cta" style="margin-top:var(--sp6);">
-          <a class="btn btn-solid btn-lg" data-try href="#contact">Start your free trial</a>
+        <div class="price-sub">or $99 a year &mdash; or $399 once and it&rsquo;s yours forever. Pick a plan:</div>
+        <div class="sect-cta" style="margin-top:var(--sp6);flex-wrap:wrap;gap:var(--sp3);">
+          <button class="btn btn-solid btn-lg" data-buy data-name="The Bold Life Platform — Monthly" data-amt="9" data-mode="subscription" data-interval="month">Get it &mdash; $9/mo</button>
+          <button class="btn btn-primary btn-lg" data-buy data-name="The Bold Life Platform — Yearly" data-amt="99" data-mode="subscription" data-interval="year">$99/yr</button>
+          <button class="btn btn-primary btn-lg" data-buy data-name="The Bold Life Platform — Lifetime" data-amt="399" data-mode="payment">$399 once</button>
         </div>
+        <p id="buyMsg" style="display:none;margin-top:var(--sp3);font-family:var(--mono);font-size:var(--text-xs);color:var(--t2)"></p>
       </div>
       <ul>
         <li><b>&check;</b> 30-day free trial &mdash; see it live first</li>
@@ -1813,9 +1816,10 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
         <li><b>&check;</b> Bookings &amp; payments on your own tools</li>
       </ul>
     </div>
-    <p class="honest reveal"><b>Straight talk:</b> start free for 30 days. Keep it and it&rsquo;s
+    <p class="honest reveal"><b>Straight talk:</b> it&rsquo;s
       <b>$9 a month</b>, <b>$99 a year</b>, or <b>$399 once</b> to own it forever &mdash; everything
-      included, and you can cancel the subscription anytime. All three are the self-hosted version:
+      included, and you can cancel a subscription anytime. Want to try before you buy? Email us below.
+      All three are the self-hosted version:
       you run your site (hosting is free). We confirm before the first charge; no surprise billing.
       Your domain and the payment/booking tools you choose (Stripe, Calendly) are billed by those providers.</p>
   </div>
@@ -1902,6 +1906,41 @@ svg[data-pos="solo-c"] .vg-a,svg[data-pos="solo-c"] .vg-b{opacity:0;transform:sc
       a.setAttribute('rel', 'noopener');
     });
   }
+
+  /* ----- Buy path -----
+     The buy buttons start a Stripe Checkout Session via our own Edge Function on
+     the Bold Life Supabase project (the Stripe secret is held there). It goes live
+     the moment STRIPE_SECRET_KEY is set on the project; until then the function
+     replies "not configured" and the button shows a friendly fallback — never a
+     dead end. */
+  var CHECKOUT_URL = "https://afpnvuswwuufzonsdgpp.supabase.co/functions/v1/stripe-checkout";
+  var buyMsg = document.getElementById('buyMsg');
+  [].slice.call(document.querySelectorAll('[data-buy]')).forEach(function(b){
+    b.addEventListener('click', function(){
+      var name = b.getAttribute('data-name');
+      var amt = Number(b.getAttribute('data-amt'));
+      var label = b.textContent; b.disabled = true; b.textContent = 'One sec…';
+      fetch(CHECKOUT_URL, {
+        method: 'POST', headers: {'content-type':'application/json'},
+        body: JSON.stringify({
+          item: { id: name, name: name, price: amt },
+          mode: b.getAttribute('data-mode'),
+          interval: b.getAttribute('data-interval'),
+          success_url: location.origin + location.pathname + '?purchased=1',
+          cancel_url: location.href
+        })
+      }).then(function(r){ return r.json().catch(function(){return {};}).then(function(d){ return {ok:r.ok, d:d}; }); })
+        .then(function(res){
+          if(res.ok && res.d.url){ location.href = res.d.url; return; }
+          if(buyMsg){ buyMsg.style.display='block'; buyMsg.textContent = 'Checkout is being set up — email Jamesyn@theboldlifecoaching.com and we’ll get you started.'; }
+          b.disabled=false; b.textContent=label;
+        })
+        .catch(function(){
+          if(buyMsg){ buyMsg.style.display='block'; buyMsg.textContent = 'Couldn’t start checkout — email Jamesyn@theboldlifecoaching.com.'; }
+          b.disabled=false; b.textContent=label;
+        });
+    });
+  });
 
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var els = [].slice.call(document.querySelectorAll('.reveal'));
